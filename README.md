@@ -23,11 +23,6 @@ The dataset is sourced from the **UCI Machine Learning Repository** and contains
 - **Alcohol** – Alcohol content in % volume
 - **Quality (Target)** – Score between 0 and 10 (based on sensory data)
 
-📁 **Total Samples**: 1599  
-📊 **Type**: Multiclass Classification
-
----
-
 ## 🧠 Model & Approach
 
 ### 🔍 Exploratory Data Analysis (EDA)
@@ -53,7 +48,7 @@ The dataset is sourced from the **UCI Machine Learning Repository** and contains
 - **Confusion Matrix**: For visualizing misclassifications
 - **Feature Importance**: Determined which features influenced predictions most
 
-📌 Model achieved an accuracy of approximately **90%** 
+📌 Model achieved an accuracy of approximately **92.6%** 
 
 ---
 
@@ -63,3 +58,4 @@ Make sure you have Python 3.x installed. Then install the following packages:
 
 ```bash
 pip install numpy pandas scikit-learn seaborn matplotlib
+
