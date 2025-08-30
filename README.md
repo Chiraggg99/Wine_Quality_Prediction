@@ -1,51 +1,65 @@
 # 🍷 Wine Quality Prediction using Random Forest
 
 ## 📌 Overview
-This project implements a **Random Forest** model to predict the quality of wine based on its chemical composition and physicochemical properties.
+This project implements a **Random Forest Classifier** to predict the quality of wine based on various chemical and physicochemical properties. The goal is to build a robust classification model that can assist in automating wine quality assessment, which traditionally relies on human tasting.
 
 ---
 
 ## 📊 Dataset
-The dataset consists of numerical features that influence wine quality, including:
 
-- Fixed Acidity & Volatile Acidity  
-- Citric Acid  
-- Residual Sugar  
-- Chlorides  
-- Free & Total Sulfur Dioxide  
-- Density  
-- pH  
-- Sulphates  
-- Alcohol Content  
-- **Quality Score** (Target Variable)
+The dataset is sourced from the **UCI Machine Learning Repository** and contains **red wine samples**. Each row represents a wine sample with the following features:
+
+### 🔬 Features:
+- **Fixed Acidity** – Tartaric acid content
+- **Volatile Acidity** – Acetic acid content (high levels cause vinegar taste)
+- **Citric Acid** – Acts as a preservative
+- **Residual Sugar** – Amount of sugar remaining after fermentation
+- **Chlorides** – Salt content
+- **Free Sulfur Dioxide** – Prevents microbial growth
+- **Total Sulfur Dioxide** – Sum of free and bound forms
+- **Density** – Related to sugar and alcohol content
+- **pH** – Acidity level
+- **Sulphates** – Additive contributing to sulfur dioxide levels
+- **Alcohol** – Alcohol content in % volume
+- **Quality (Target)** – Score between 0 and 10 (based on sensory data)
+
+📁 **Total Samples**: 1599  
+📊 **Type**: Multiclass Classification
 
 ---
 
 ## 🧠 Model & Approach
 
 ### 🔍 Exploratory Data Analysis (EDA)
-- Used **Seaborn** & **Matplotlib** to visualize feature distributions and correlations.
-- Identified missing values and handled them appropriately.
+- **Visualized feature distributions** using Seaborn histograms and KDE plots.
+- **Plotted correlations** with a heatmap to identify strongly related features.
+- Detected **outliers** and **missing values** (if any).
+- Boxplots and scatterplots used to understand relationships with the target.
 
-### 🧰 Feature Engineering
-- Scaled numerical features for better model performance.
+### ⚙️ Feature Engineering
+- Applied **MinMaxScaler** to normalize features.
+- Converted the **'quality'** variable into categorical labels (optional step).
+- Handled **class imbalance** by analyzing distribution of quality scores.
 
-### 🌲 Algorithm
-- Used **Random Forest Classifier** for multi-class classification.
+### 🌲 Machine Learning Model
+- Implemented a **Random Forest Classifier** from scikit-learn.
+- Performed **hyperparameter tuning** 
+- Used **train_test_split** for model validation.
 
 ### 📈 Evaluation Metrics
-- Accuracy  
-- Precision  
-- Recall  
-- F1-score  
-- Confusion Matrix  
-- Feature Importance Analysis
+- **Accuracy**: Overall correctness
+- **Precision & Recall**: For each class
+- **F1-Score**: Harmonic mean of precision and recall
+- **Confusion Matrix**: For visualizing misclassifications
+- **Feature Importance**: Determined which features influenced predictions most
+
+📌 Model achieved an accuracy of approximately **90%** 
 
 ---
 
 ## ⚙️ Installation & Requirements
 
-To run this project, install the necessary dependencies:
+Make sure you have Python 3.x installed. Then install the following packages:
 
 ```bash
 pip install numpy pandas scikit-learn seaborn matplotlib
